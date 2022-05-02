@@ -1,3 +1,13 @@
+import { Header } from "./organisme/header";
+import { List } from "./organisme/list";
+import { GlobalStyle } from "./style/index";
+
 export const App = () => {
-  return <div>Test technique Canal</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Header />
+      <List />
+    </>
+  );
 };
