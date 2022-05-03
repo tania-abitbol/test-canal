@@ -4,14 +4,16 @@ import styled from "styled-components";
 import { ItemsMenu } from "../molecules/items-menu";
 import { getThemes } from "../services/theme";
 
-// import Logo from "../images/logo-canal.png";
+// import Logo from "../assets/images/logo-canal.png";
 
-const ItemsMenuWrapper = styled.div`
+const HeaderWrapper = styled.div`
   display: flex;
 `;
 
+type HeaderType = [];
+
 export const Header = () => {
-  const [themes, setThemes] = useState<any>([]);
+  const [themes, setThemes] = useState<HeaderType>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,9 +24,9 @@ export const Header = () => {
     fetchData();
   }, [setThemes]);
   return (
-    <ItemsMenuWrapper>
+    <HeaderWrapper>
       {/* <img src={Logo} alt="logo mycanal" /> */}
       <ItemsMenu genres={themes} />
-    </ItemsMenuWrapper>
+    </HeaderWrapper>
   );
 };

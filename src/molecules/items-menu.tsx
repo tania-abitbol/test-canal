@@ -7,13 +7,18 @@ const ItemsMenuWrapper = styled.div`
   flex-wrap: wrap;
 `;
 
-type genresType = {
+type ItemsMenuType = {
   genres: [];
 };
 
-export const ItemsMenu = ({ genres }: genresType) => (
+type ItemsMenuPropsType = {
+  name: string;
+  id: number;
+};
+
+export const ItemsMenu = ({ genres }: ItemsMenuType) => (
   <ItemsMenuWrapper>
-    {genres.map((genre: { name: string; id: number }) => {
+    {genres.map((genre: ItemsMenuPropsType) => {
       return <ItemMenu key={genre.id} text={genre.name}></ItemMenu>;
     })}
   </ItemsMenuWrapper>

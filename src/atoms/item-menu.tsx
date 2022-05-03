@@ -9,10 +9,10 @@ const ItemWrapper = styled.div`
   }
 `;
 
-type ItemMenuType = {
+type ItemMenuPropsType = {
   text: string;
 };
 
-export const ItemMenu = ({ text }: ItemMenuType) => (
+export const ItemMenu = ({ text }: ItemMenuPropsType) => (
   <ItemWrapper>{text}</ItemWrapper>
 );

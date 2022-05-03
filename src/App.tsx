@@ -1,5 +1,5 @@
-import { Header } from "./organisme/header";
-import { List } from "./organisme/list";
+import { Header } from "./organisms/header";
+import { List } from "./organisms/list";
 import { GlobalStyle } from "./style/index";
 
 export const App = () => {
