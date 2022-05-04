@@ -1,30 +1,19 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { ItemsList } from "../molecules/items-list";
-import { getList } from "../services/list";
 
 const ListWrapper = styled.div`
   display: flex;
 `;
 
-type ListType = [];
+type ListItemsType = {
+  listItems: [];
+};
 
-export const List = () => {
-  const [list, setList] = useState<ListType>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getList(27);
-      setList(response.results);
-    };
-
-    fetchData();
-  }, [setList]);
-
+export const List = ({ listItems }: ListItemsType) => {
   return (
     <ListWrapper>
-      <ItemsList list={list} />
+      <ItemsList list={listItems} />
     </ListWrapper>
   );
 };

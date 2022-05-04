@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { ItemMenu } from "../atoms/item-menu";
 
 const ItemsMenuWrapper = styled.div`
@@ -18,8 +19,8 @@ type ItemsMenuPropsType = {
 
 export const ItemsMenu = ({ genres }: ItemsMenuType) => (
   <ItemsMenuWrapper>
-    {genres.map((genre: ItemsMenuPropsType) => {
-      return <ItemMenu key={genre.id} text={genre.name}></ItemMenu>;
+    {genres.map((genre: ItemsMenuPropsType, index) => {
+      return <ItemMenu key={index} genreText={genre.name} genreId={genre.id} />;
     })}
   </ItemsMenuWrapper>
 );

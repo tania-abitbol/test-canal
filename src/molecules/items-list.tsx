@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { ItemList } from "../atoms/item-list";
 
 const ItemsListWrapper = styled.div`
@@ -22,6 +23,7 @@ export const ItemsList = ({ list }: ItemsListType) => (
       return (
         <ItemList
           key={index}
+          id={item.id}
           title={item.title}
           posterPath={item.poster_path}
         />

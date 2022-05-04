@@ -1,32 +1,22 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { ItemsMenu } from "../molecules/items-menu";
-import { getThemes } from "../services/theme";
+import Logo from "../assets/images/logo.png";
 
-// import Logo from "../assets/images/logo-canal.png";
+import { ItemsMenu } from "../molecules/items-menu";
 
 const HeaderWrapper = styled.div`
   display: flex;
 `;
 
-type HeaderType = [];
+type ListGenreType = {
+  listGenre: [];
+};
 
-export const Header = () => {
-  const [themes, setThemes] = useState<HeaderType>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getThemes();
-      setThemes(response.genres);
-    };
-
-    fetchData();
-  }, [setThemes]);
+export const Header = ({ listGenre }: ListGenreType) => {
   return (
     <HeaderWrapper>
-      {/* <img src={Logo} alt="logo mycanal" /> */}
-      <ItemsMenu genres={themes} />
+      <img src={Logo} alt="logo mycanal" />
+      <ItemsMenu genres={listGenre} />
     </HeaderWrapper>
   );
 };

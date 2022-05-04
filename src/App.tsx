@@ -1,13 +1,14 @@
-import { Header } from "./organisms/header";
-import { List } from "./organisms/list";
-import { GlobalStyle } from "./style/index";
+import { GlobalStyle } from "./style";
+import { Homepage } from "./pages/homepage";
+import { GenreProvider } from "./context/genre";
 
 export const App = () => {
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <List />
+      <GenreProvider>
+        <GlobalStyle />
+        <Homepage />
+      </GenreProvider>
     </>
   );
 };

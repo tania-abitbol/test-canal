@@ -1,4 +1,8 @@
+import { useContext } from "react";
 import styled from "styled-components";
+
+import { GenreContext } from "../context/genre";
+
 import { theme } from "../style/theme";
 
 const ItemWrapper = styled.div`
@@ -10,9 +14,20 @@ const ItemWrapper = styled.div`
 `;
 
 type ItemMenuPropsType = {
-  text: string;
+  genreText: string;
+  genreId: number;
 };
 
-export const ItemMenu = ({ text }: ItemMenuPropsType) => (
-  <ItemWrapper>{text}</ItemWrapper>
-);
+export const ItemMenu = ({ genreText, genreId }: ItemMenuPropsType) => {
+  const context = useContext(GenreContext);
+
+  return (
+    <ItemWrapper
+      onClick={() => {
+        context.setGenre(genreId);
+      }}
+    >
+      {genreText}
+    </ItemWrapper>
+  );
+};
