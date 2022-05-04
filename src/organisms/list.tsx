@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ItemsList } from "../molecules/items-list";
+import { ItemsList } from "molecules/items-list";
 
 const ListWrapper = styled.div`
   display: flex;

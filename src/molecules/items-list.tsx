@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
-import { ItemList } from "../atoms/item-list";
+import { theme } from "style/theme";
+
+import { ItemList } from "atoms/item-list";
 
 const ItemsListWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: ${theme.color.black};
 `;
 
 type ItemsListType = {

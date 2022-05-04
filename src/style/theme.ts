@@ -16,6 +16,7 @@ export const color = {
   },
   white: "#fff",
   error: "#E1534B",
+  black: "#000000",
 };
 
 export const space = {

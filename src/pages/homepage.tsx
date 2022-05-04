@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 
-import { GenreContext } from "../context/genre";
+import { GenreContext } from "context/genre";
 
-import { Header } from "../organisms/header";
-import { List } from "../organisms/list";
+import { Header } from "organisms/header";
+import { List } from "organisms/list";
 
-import { getList } from "../services/list";
-import { getThemes } from "../services/theme";
+import { getList } from "services/list";
+import { getThemes } from "services/theme";
 
 export const Homepage = () => {
   const [genres, setGenres] = useState<[]>([]);

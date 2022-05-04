@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ItemMenu } from "../atoms/item-menu";
+import { ItemMenu } from "atoms/item-menu";
 
 const ItemsMenuWrapper = styled.div`
   display: flex;

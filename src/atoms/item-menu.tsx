@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import styled from "styled-components";
 
-import { GenreContext } from "../context/genre";
+import { GenreContext } from "context/genre";
 
-import { theme } from "../style/theme";
+import { theme } from "style/theme";
 
 const ItemWrapper = styled.div`
   font-weight: ${theme.font.weight.bold};
-  margin: ${theme.space.base};
+  padding: ${theme.space.base};
+  color: ${theme.color.grey.light};
+  cursor: pointer;
   &:hover {
     color: ${theme.color.primary.base};
   }

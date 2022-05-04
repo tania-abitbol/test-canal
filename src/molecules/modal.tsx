@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import { getMovie } from "../services/movie";
+import { getMovie } from "services/movie";
 
 const ModalWrapper = styled.div`
   color: white;
