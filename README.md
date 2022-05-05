@@ -1,8 +1,8 @@
 # Test technique Canal
 
-### 1ere étape pour installer le super projet => `yarn`
+### 1er étape pour installer le super projet => `yarn`
 
-### 2eme étape pour lancer le super projet => `yarn start`
+### 2e étape pour lancer le super projet => `yarn start`
 
 Hello !
 
