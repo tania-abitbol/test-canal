@@ -17,6 +17,4 @@ export const GlobalStyle = createGlobalStyle`
   p {
     margin-bottom: 0;
   }
-
-  
 `;

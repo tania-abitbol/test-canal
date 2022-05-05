@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 
 import { theme } from "style/theme";
 
 import { Button } from "atoms/button";
+import { MovieTitle } from "atoms/movie-title";
 
-import { Modal } from "molecules/modal";
+import { Modal } from "atoms/modal";
 
 const ItemWrapper = styled.div`
   cursor: pointer;
@@ -13,17 +14,13 @@ const ItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  max-width: 200px;
+  box-shadow: ${theme.shadow.base};
+
   img {
-    width: 175px;
-    height: 200px;
+    width: 100%;
     object-fit: cover;
-  }
-  p {
-    padding-top: 10px;
-    width: 150px;
-    text-align: center;
-    color: ${theme.color.grey.light};
-    font-weight: ${theme.font.weight.bold};
   }
 `;
 
@@ -33,18 +30,18 @@ type ItemListPropsType = {
   id: number;
 };
 
-export const ItemList = ({ posterPath, title, id }: ItemListPropsType) => {
+export const ItemList: FC<ItemListPropsType> = (props) => {
   const [showModal, setshowModal] = useState<boolean>(false);
 
   return (
     <ItemWrapper onClick={() => setshowModal(!showModal)}>
       <img
-        src={`https://image.tmdb.org/t/p/original/${posterPath}`}
+        src={`https://image.tmdb.org/t/p/original/${props.posterPath}`}
         alt="poster"
       />
-      <p>{title}</p>
+      <MovieTitle title={props.title} />
       <Button text="En savoir +" />
-      {showModal && <Modal id={id} />}
+      {showModal && <Modal id={props.id} />}
     </ItemWrapper>
   );
 };

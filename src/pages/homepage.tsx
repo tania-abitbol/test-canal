@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, FC } from "react";
 
 import { GenreContext } from "context/genre";
 
@@ -8,9 +8,10 @@ import { List } from "organisms/list";
 import { getList } from "services/list";
 import { getThemes } from "services/theme";
 
-export const Homepage = () => {
+export const Homepage: FC = () => {
   const [genres, setGenres] = useState<[]>([]);
   const [listItems, setListItems] = useState<[]>([]);
+
   const context = useContext(GenreContext);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export const Homepage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getList(context.currentGenre);
+      const response = await getList(context.currentGenre.id);
       setListItems(response.results);
     };
     fetchData();
@@ -32,7 +33,7 @@ export const Homepage = () => {
   return (
     <>
       <Header listGenre={genres} />
-      <List listItems={listItems} />
+      <List list={listItems} />
     </>
   );
 };
